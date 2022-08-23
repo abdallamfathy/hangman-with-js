@@ -127,9 +127,7 @@ document.addEventListener("click",(e) => {
             }
         }); 
         // Outside the loop
-        
-    }   
-       // check the status
+        // check the status
        if (theStatus !== true) {
         
         // play failed sound
@@ -150,6 +148,26 @@ document.addEventListener("click",(e) => {
     }  
         else{
         // play success sound
-    } 
+    }   
+    }   
+       
+});
+
+// create function end game
+function endGame() {
         
-})
+    // create div
+    let div = document.createElement("div");
+
+    // Add text to the div
+    let text = document.createTextNode(` Game over, the word is : ${randomValueName}`);
+
+    // append textt to div
+    div.appendChild(text);
+
+    // add class to div
+    div.className = "popup";
+
+    // Append div to body
+    document.body.appendChild(div);
+}
