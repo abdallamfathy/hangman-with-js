@@ -82,12 +82,18 @@ lettersAndSpaces.forEach(letter =>{
 // Select letters guess span
 let guessSpan = document.querySelectorAll(".letters-guess span");
 
+// set wrong attempts
+let wrongAttempts = 0;
+
+// get hanger draw element
+let hanger = document.querySelector(".hangman-draw");
+
 // Add event on letters
 document.addEventListener("click",(e) => {
     
     // Make the status
     let theStatus = false;
-    
+
     // Check if target is letter
     if (e.target.className === "letter-box") {
         
@@ -119,7 +125,18 @@ document.addEventListener("click",(e) => {
                     }
                 })
             }
-        });
-       
-    } console.log(theStatus);
+        }); 
+        // Outside the loop
+        
+    }   
+       // check the status
+       if (theStatus !== true) {
+        
+        // Increase worng attempt
+        wrongAttempts++
+
+        // Add draw
+        hanger.classList.add(`wrong-${wrongAttempts}`)
+    }   
+        
 })
