@@ -84,7 +84,10 @@ let guessSpan = document.querySelectorAll(".letters-guess span");
 
 // Add event on letters
 document.addEventListener("click",(e) => {
-
+    
+    // Make the status
+    let theStatus = false;
+    
     // Check if target is letter
     if (e.target.className === "letter-box") {
         
@@ -103,6 +106,9 @@ document.addEventListener("click",(e) => {
             // Check if selected letter matched word letter
             if (selectedLetter === wordLetter) {
                 
+                // Update the status
+                theStatus = true;
+
                 // Loop over all spans
                 guessSpan.forEach((span,spanIndex)=>{
                     // Get the selected span position
@@ -113,6 +119,7 @@ document.addEventListener("click",(e) => {
                     }
                 })
             }
-        })
-    }
+        });
+       
+    } console.log(theStatus);
 })
