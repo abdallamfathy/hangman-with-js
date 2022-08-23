@@ -131,6 +131,7 @@ document.addEventListener("click",(e) => {
        if (theStatus !== true) {
         
         // play failed sound
+        document.getElementById("fail").play();
 
         // Increase worng attempt
         wrongAttempts++
@@ -142,12 +143,14 @@ document.addEventListener("click",(e) => {
         if (wrongAttempts == 8) {
         // trigger function end game
          endGame();
+        // Add class finished after he fail
         lettersContainer.classList.add("finished")
         }
         
     }  
         else{
         // play success sound
+        document.getElementById("success").play();
     }   
     }   
        
@@ -171,3 +174,37 @@ function endGame() {
     // Append div to body
     document.body.appendChild(div);
 }
+//
+//
+//
+//
+//
+//
+///
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
