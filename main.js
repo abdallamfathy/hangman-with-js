@@ -71,13 +71,16 @@ lettersAndSpaces.forEach(letter =>{
     if (letter === " ") {
         
         // Add class to span
-        letter.className = "with-space";
+        span.className = "with-space";
     }
 
     // Append span to its container
     lettersGuessContainer.appendChild(span);
 
 });
+
+// Select letters guess span
+let guessSpan = document.querySelectorAll(".letters-guess span");
 
 // Add event on letters
 document.addEventListener("click",(e) => {
@@ -91,6 +94,25 @@ document.addEventListener("click",(e) => {
         // Set this target to variable
         let selectedLetter = e.target.innerHTML.toLowerCase();
 
-        
+        // Get array of letters from chosen word
+        let theChosenWord = Array.from(randomValueName.toLowerCase());
+
+        // Loop over selected word letters
+        theChosenWord.forEach((wordLetter , wordIndex) =>{
+
+            // Check if selected letter matched word letter
+            if (selectedLetter === wordLetter) {
+                
+                // Loop over all spans
+                guessSpan.forEach((span,spanIndex)=>{
+                    // Get the selected span position
+                    if (wordIndex === spanIndex) {
+
+                        // Add the letter to the span
+                        span.innerHTML = selectedLetter;    
+                    }
+                })
+            }
+        })
     }
 })
