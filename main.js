@@ -54,4 +54,27 @@ let randomValueNumber = Math.floor(Math.random() * randomValue.length);
 let randomValueName = randomValue[randomValueNumber];
 
 // Create span
-document.querySelector(".game-info .category span").innerHTML = randomName + " " + ;
+document.querySelector(".game-info .category span").innerHTML = randomName;
+
+// Select chosen word element
+let lettersGuessContainer = document.querySelector(".letters-guess");
+
+// Get array of letters from selected word
+let lettersAndSpaces = Array.from(randomValueName);
+
+// Loop over each letter
+lettersAndSpaces.forEach(letter =>{
+    // Create empty span
+    let span = document.createElement("span");
+
+    // If letter is space
+    if (letter === " ") {
+        
+        // Add class to span
+        letter.className = "with-space";
+    }
+
+    // Append span to its container
+    lettersGuessContainer.appendChild(span);
+
+})
