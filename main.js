@@ -132,11 +132,24 @@ document.addEventListener("click",(e) => {
        // check the status
        if (theStatus !== true) {
         
+        // play failed sound
+
         // Increase worng attempt
         wrongAttempts++
 
         // Add draw
         hanger.classList.add(`wrong-${wrongAttempts}`)
-    }   
+
+        // check if he failed 8 times
+        if (wrongAttempts == 8) {
+        // trigger function end game
+         endGame();
+        lettersContainer.classList.add("finished")
+        }
+        
+    }  
+        else{
+        // play success sound
+    } 
         
 })
