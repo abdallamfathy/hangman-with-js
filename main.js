@@ -77,4 +77,20 @@ lettersAndSpaces.forEach(letter =>{
     // Append span to its container
     lettersGuessContainer.appendChild(span);
 
+});
+
+// Add event on letters
+document.addEventListener("click",(e) => {
+
+    // Check if target is letter
+    if (e.target.className === "letter-box") {
+        
+        // Add class to this target
+        e.target.classList.add("clicked");
+
+        // Set this target to variable
+        let selectedLetter = e.target.innerHTML.toLowerCase();
+
+        
+    }
 })
